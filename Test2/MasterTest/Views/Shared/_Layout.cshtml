@@ -1,12 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<title>@ViewBag.Title</title>
+		<title>Norton Univeristy</title>
+		
+		<link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+        <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+        <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+		<link href="~/Scripts/FormStyle.css" rel="stylesheet"/>
+        
+        <script src="~/Scripts/jquery_min.js"></script>
+        <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+        <meta charset="UTF-8"/>
+
         @RenderSection("head", false)
 	</head>
 
 	<body>
-		<header style="background-color:gray;">Here is the header of the layout page.</header>
-		@RenderBody()
+		<header style="background-color: gray; ">
+			<h1>X-Appointment</h1>
+		</header>
+		<div class="app-bar">
+			<center>
+				<a class="app-bar-element" href="@Url.Action("Index","Home")">Home</a>
+				<a class="app-bar-element" href="@Url.Action("SaveDB","Home")">Save data</a>
+				<a class="app-bar-element" href="@Url.Action("ShowDB", "Home")">Show Data</a>
+			</center>
+		</div>
+
+        <table >
+            <tr>
+                <td>
+					<label>Hello Navigation</label>
+                </td>
+                <td>
+					@RenderBody()
+                </td>
+                <td>
+					<label>Hello Right</label>
+                </td>
+            </tr>
+        </table>
+
 	</body>
 </html>

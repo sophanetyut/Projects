@@ -97,6 +97,31 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\SaveDB.cshtml" />
     <Content Include="Views\Home\ShowDB.cshtml" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\css\metro-colors.css" />
+    <Content Include="Scripts\css\metro-colors.min.css" />
+    <Content Include="Scripts\css\metro-icons.css" />
+    <Content Include="Scripts\css\metro-icons.min.css" />
+    <Content Include="Scripts\css\metro-responsive.css" />
+    <Content Include="Scripts\css\metro-responsive.min.css" />
+    <Content Include="Scripts\css\metro-rtl.css" />
+    <Content Include="Scripts\css\metro-rtl.min.css" />
+    <Content Include="Scripts\css\metro-schemes.css" />
+    <Content Include="Scripts\css\metro-schemes.min.css" />
+    <Content Include="Scripts\css\metro.css" />
+    <Content Include="Scripts\css\metro.min.css" />
+    <Content Include="Scripts\fonts\metro.eot" />
+    <Content Include="Scripts\fonts\metro.svg" />
+    <Content Include="Scripts\fonts\metro.ttf" />
+    <Content Include="Scripts\fonts\metro.woff" />
+    <Content Include="Scripts\js\metro.js" />
+    <Content Include="Scripts\js\metro.min.js" />
+    <Content Include="Scripts\FormStyle.css" />
+    <Content Include="Views\Shared\fuckingMaster.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\css\.DS_Store" />
+    <None Include="Scripts\fonts\selection.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
