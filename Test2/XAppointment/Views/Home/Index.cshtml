@@ -1,0 +1,128 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ResultUpdate</title>
+         <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery_min.js"></script>
+		<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+
+		<style>
+        footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:18%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+
+        .item{
+            position:absolute;
+            top:24em;
+            align:center;
+            left:33%;
+        }
+        .setting{
+            position:fixed;      
+            align:center;
+            top:35em;
+            left:35%;
+        }
+        h3{
+            background-color:transparent;
+        }
+		</style>
+</head>
+	
+<body>
+		<header>
+        <h3>Welcome to X-Apointment system</h3>
+    </header>
+
+		
+		<div class="panel" style="position:absolute; padding-top=200px; text-align:center; left:20%;  ">
+            <div class="heading">
+                <span class="title">Warhouse</span>
+                </div>
+            <div class="content"><br>
+        <h4>Go to Warhouse Panel....</h4>
+
+        <form action="@Url.Action("Index","Warhouse")">
+            <input type="submit" value="Go" class="button success"/>
+        </form><br>
+                </div>
+        </div>
+		
+		
+        <div class="panel" style="position:absolute; padding-top=200px; text-align:center; left:40%;  ">
+            <div class="heading">
+                <span class="title">Items</span>
+                </div>
+            <div class="content"><br>
+        <h4>Go to Add Item Panel....</h4>
+
+        <form action="@Url.Action("Index","Item")">
+            <input type="submit" value="Go" class="button success"/>
+        </form><br>
+                </div>
+        </div>
+
+
+		<div class="panel" style="position:absolute; padding-top=200px; text-align:center; left:60%;  ">
+            <div class="heading">
+                <span class="title">List items</span>
+                </div>
+            <div class="content"><br>
+        <h4>Go to list Item Panel....</h4>
+
+        <form action="@Url.Action("ShowDB","Home")">
+            <input type="submit" value="Go" class="button success"/>
+        </form><br>
+                </div>
+        </div>
+
+		<form action="@Url.Action("Index","ItemGroup")" method="post">
+			<input type="submit" value="Item Group"/>
+		</form>
+    <footer>Copyright &copy; X-ware.com</footer>
+		
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head><title>X-Appointment</title>
+    <meta charset="UTF-8"/>
+    <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/metro.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body><h4 align="center">
+		<form action="@Url.Action("Index","ItemGroup")" method="post">
+			<input type="submit" value="Save"/>
+		</form>
+		<form action="@Url.Action("ItemGroupList","ItemGroup")" method="post">
+			<input type="submit" value="Show Item List"/>
+		</form>
+			</h4>
+</body>
+</html>

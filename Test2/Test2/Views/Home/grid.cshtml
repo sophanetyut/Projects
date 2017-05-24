@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<script>
+    $(document).ready(function(e){
+        $("input[name='btnNext']").click(function(e){
+            $.ajax({
+                url : "@Url.Action("grid","Home")",
+                type : "POST",
+                data : {
+                    "app" : "test",
+	                "ind" : $("#ind").val(),
+	                
+                },
+	            async : false,
+                error : function(e){},
+	            beforeSend : function(){
+                    $("#dvList").html("Loading...");
+	            },
+                success : function(data){
+	                s
+                    $("#dvList").html(data);
+
+	                
+                }
+            });
+        })
+    })
+</script>
+
+    <table  bgcolor="B1DEE8" >
+            <thead>
+                <tr style="color: #533AFF">
+                    <th>ID</th>
+                    <th>Student name</th>
+                    <th>Date of birth</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+	
+            @foreach (var item in ViewBag.ShowStudent)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td align="center">@item.StuName</td>
+                    <td align="center">@item.DOB</td>
+                    <td align="center">@item.Age</td>
+                </tr>
+            }
+
+            <tr bgcolor="white">
+                <td align="center" colspan="2" >
+                    <form action="@Url.Action("ShowData","Home")" method="post">
+                        <input type="text" name="indBack" value="@ViewBag.indBack"/>
+                        <input type="submit" name="btnPrevious"  value="Previous" @{}>
+                    </form>
+                </td>
+                <td align="center" colspan="2">
+                    <form action="@Url.Action("ShowData","Home")" method="post">
+                        <input type="button" name="btnNext" value="Next">
+                        <input type="text" name="ind" id="ind" value="@ViewBag.ind"/>
+                    </form>
+                </td>
+            </tr>
+        </table>

@@ -1,0 +1,165 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WarehouseList</title>
+		<meta charset="UTF-8"/>
+    <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/metro.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+		footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:18%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+
+        .item{
+            position:absolute;
+            top:24em;
+            align:center;
+            left:33%;
+        }
+        .setting{
+            position:fixed;      
+            align:center;
+            top:35em;
+            left:35%;
+        }
+        h3{
+            background-color:transparent;
+            
+        }
+        span {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+		<header>
+        <h3>Welcome to X-Apointment system</h3>
+        </header>
+
+		<h3 align="center">Warehouse list</h3>
+		<table class="table striped hovered" align="center"> 
+			<thead>
+				<tr>
+					<th>
+						<label>Warehouse ID</label>
+					</th>
+                    <th>
+                        <label>Work flow</label>
+                    </th>
+					<th>
+                        <label>State</label>
+                    </th>
+					<th>
+						<label>Created Date</label>
+					</th>
+					<th>
+						<label>Updated Date</label>
+					</th>
+					<th>
+                        <label>Name</label>
+                    </th>
+					<th>
+                        <label>Address</label>
+                    </th>
+					<th align="center">
+						<label>Other</label>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(var item in ViewBag.wld){
+				<tr>
+					<td>@item.ID</td>
+                    <td>@item.WorkFlow</td>
+					<td>@item.State</td>
+					<td>@item.Date</td>
+					<td>@item.Update</td>
+					<td>@item.Name</td>
+					<td>@item.Address</td>
+					<td align="right">
+						<form action="@Url.Action("UpdateDB","Warhouse") " method="post">
+							<input name="ID" type="hidden" value="@item.ID"/>
+							<input type="submit" value="Edit" class="button link"/>
+						</form>                  
+					</td>
+					<td>
+						<form action="@Url.Action("WarehouseList","Warhouse")" method="post">
+                            <input type="hidden" name="dID" value="@item.ID"/>
+                            <input type="submit" value="Delete" class="button link"/>
+                        </form>
+					</td>
+				</tr>
+				}
+				<tr>
+					<td colspan="4" align="right">
+						<form action="@Url.Action("WarehouseList","Warhouse")" method="post">
+							<input type="hidden" name="idPre" value="@ViewBag.prev"/>
+							<input type="submit"  value="Previous"/>
+						</form>
+					</td>
+					<td align="center">
+						<form action="@Url.Action("Index","Warhouse")" method="post">
+							<input type="submit" value="New Warehouse"/>
+						</form>
+					</td>
+					<td colspan="4" align="left"> 
+						<form action="@Url.Action("WarehouseList","Warhouse")" method="post">
+                            <input type="submit"  value="Next"/>
+                            <input type="hidden" name="inn" value="@ViewBag.next"/>
+						</form>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    <footer>Copyright &copy; X-ware.com</footer>
+</body>
+</html>

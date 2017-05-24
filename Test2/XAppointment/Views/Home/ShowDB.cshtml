@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<title>ShowDB</title>
+
+		<link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery_min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/select2.min.js"></script>
+		
+</head>
+<body>
+		<h2 align="center">XAppointment list</h2>
+        <br>
+		<h1>Total item = @ViewBag.itemCount</h1>
+		<table bgcolor="B1DEE8" class="table  hovered border ">
+			<thead >
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Group</th>
+					<th align="center">Price</th>
+					<th align="center">Quality</th>
+                    <th align="center">Currency</th>
+                    <th align="center">Tag</th>
+					<th align="center">Feature</th>
+                    <th align="center">Serial</th>
+                    <th align="center">Stock</th>
+                    <th align="center">Size</th>
+					<th>Other</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(var item in ViewBag.dt){
+                <tr>
+					<td>@item.itemID</td>
+                    <td>@item.Name</td>
+                    <td>@item.Group</td>
+                    <td>@item.Price</td>
+                    <td>@item.Qty</td>
+                    <td>@item.Currency</td>
+                    <td>@item.Tag</td>
+                    <td>@item.Feature</td>
+                    <td>@item.Serial</td>
+                    <td>@item.Stock</td>
+					<td>@item.Size</td>
+					<td align="right">
+						<form action="@Url.Action("UpdateDB","Home")" method="post">
+							<input type="submit" class="Button success" value="Edit"/>                     
+							<input type="hidden" name="btEdit" value="@item.itemID"/>
+						</form>                  
+					</td>
+					<td align="left">
+						<form action="@Url.Action("ShowDB","Home")" method="post">
+                            <input type="submit" value="Delete" class="button danger"/>
+							<input type="hidden" name="btDe" value="@item.itemID"/>
+                        </form>
+					</td>
+					
+					
+				</tr>
+                }
+				<tr>
+					<td colspan="6" bgcolor="" align="right">
+						<form action="@Url.Action("Index","Home")" method="post">
+                            <input type="submit" value="Previous" class="button success block-shadow-success text-shadow">     
+							<input type="hidden" name="prev" value="@ViewBag.prev">
+                        </form>
+					</td>
+					<td align="center">
+						<form action="@Url.Action("Index","Item")" method="post" >
+							<input type="submit" value="Add new " class="button warning block-shadow-warning text-shadow" align="middle">
+						</form>
+					</td>
+                    <td colspan="6" bgcolor="" align="left">
+						<form action="@Url.Action("ShowDB","Home")" method="post">
+                            <input type="submit" value="Next" class="button success block-shadow-success text-shadow">
+							<input type="hidden" name="next" value="@ViewBag.next">
+                        </form>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<br>
+        
+</body>
+</html>
+

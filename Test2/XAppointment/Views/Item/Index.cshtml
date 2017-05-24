@@ -1,0 +1,199 @@
+﻿<head>
+    <meta charset="UTF-8"/>
+    <title>Home</title>
+       <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+
+
+
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/metro.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <script>
+        
+        var a = '[{"A" : "1","B":"2"},{"A" : "12","B":"22"}]';
+        b = $.parseJSON(a);
+
+        
+
+        //$(document).ready(function(e){
+        //    $(b).each(function(i,v){
+        //            alert(v.B);
+        //        });
+        //});
+
+        
+
+    </script>
+
+    
+    <style>
+        
+        footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:18%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+
+        .item{
+            position:absolute;
+            top:24em;
+            align:center;
+            left:33%;
+        }
+        .setting{
+            position:fixed;      
+            align:center;
+            top:35em;
+            left:35%;
+        }
+        h3{
+            background-color:transparent;
+        }
+        span {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Welcome to X-Apointment system</h3>
+    </header>
+    <h4 align="center">
+        <img src="Image/tshirt.jpeg" border="1px" style="width:260px;height:228px;"/>
+        <br>
+        <input type="submit" value="Select Image" class="button success"/>
+        <input type="submit" value="Upload Image" class="button success"/>
+    </h4>
+
+    
+    <h3 align="center">
+    
+        <form id="formSubmit" action="@Url.Action("SaveDB","Home")" method="post" >  
+    
+        <h3 align="center"><span style="color:blue;">Items</span></h3>
+            
+            <label >Code @ViewData["IDD"]</label>
+            <input id="inNa" type="text" name="inName" class="input-control text" placeholder="Name">
+            
+            <label>Group</label>
+            <select name="cbGroup" class="input-control text">
+                @foreach(var items in ViewBag.IG){
+                <option value="@items.item">@items.iName</option>
+                }
+            </select>      
+            <br><br>
+            
+            <input id="inPri" type="text" class="input-control text" name="inPrice" placeholder="Price"/>
+            
+            <label/>
+            <input id="idQty" type="text" name="inQty" class="input-control text" placeholder="Quality"/>
+            <label/>
+            <input id="idCurrency" type="text" name="inCur" class="input-control text" placeholder="Currency"/>
+            <br>
+    
+            <h3 align="center" style="color:blue;">Setting</h3>
+            
+            <label class="switch">
+                Feature 
+                <input type="checkbox" name="inFea">
+                <span class="check"></span>
+            </label>
+            
+            <label class="switch">Serial 
+                <input type="checkbox" name="inSer">
+                <span class="check"/>
+            </label>
+            <label class="switch">Stock 
+                <input type="checkbox" name="inStock">
+                <span class="check"/>
+            </label>
+
+            <br>
+            <input type="text" name="inTag" class="input-control text" placeholder="Tag">
+            <label>Size</label>
+            <select name="cbSize" class="input-control text" >
+                @foreach(var items in ViewBag.IS){
+                <option value="@items.size">@items.sName</option>
+                }     
+            </select>
+            <br><br>
+            
+            <input id="btnSave" type="submit" value="Save" class="button success" >
+    
+        </form>
+    </h3>
+    <footer>Copyright &copy; X-ware.com</footer>
+    <script>
+        $( "#formSubmit" ).submit(function( event ) {
+            
+            if ($("#inNa").val()==="") {
+                $("#inNa").addClass("error");
+            }else
+                $("#inNa").removeClass("error");
+        
+            if ($("#inPri").val()==="") {
+                $("#inPri").addClass("error");
+            }else
+                $("#inPri").removeClass("error");
+
+            if ($("#idQty").val()==="") {
+                $("#idQty").addClass("error");
+            }else
+                $("#idQty").removeClass("error"); 
+
+            if ($("#idCurrency").val()==="") {
+                $("#idCurrency").addClass("error");
+            }else
+                $("#idCurrency").removeClass("error"); 
+
+            if ($("#inNa").val()==="" || $("#inPri").val()==="" || $("#idQty").val()==="" || $("#idCurrency").val()==="") {
+                event.preventDefault();
+                return;
+            }
+        });
+    </script>
+</body>

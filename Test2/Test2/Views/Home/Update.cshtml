@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+    var boom= ViewData["ls"] as string[];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update</title>
+</head>
+<body>
+        <h2>Update student information</h2>
+        <label>Update on ID = @ViewData["id"]</label>
+		
+
+        <form action="@Url.Action("Updated","Home")" method="post" >
+			<input name="hee" type="hidden" value="@ViewData["id"]" >
+            <table>
+            <tr>
+                <td>
+                    <label>Name</label>               
+                </td>
+                <td>
+                    <input name="inName" value="@boom[0]"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date of birth</label>
+                </td>
+                <td>
+                    <input name="inDOB" value="@boom[1]"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Age</label>
+                </td>
+                <td>
+                    <input name="inAge" value="@boom[2]"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Update"/>
+                </td>
+            </tr>
+        </table>     
+            </form>
+
+
+</body>
+</html>

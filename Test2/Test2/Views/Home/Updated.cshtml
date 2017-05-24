@@ -1,0 +1,9 @@
+﻿@{
+    Layout = null;
+}
+<title>Updated</title>
+
+<h2>@ViewData["updated"]</h2>
+<form action="@Url.Action("ShowData","Home")" method="post">
+    <input type="submit" value="Show Data"/>
+</form>

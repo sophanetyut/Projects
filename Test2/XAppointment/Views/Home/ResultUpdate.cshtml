@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ResultUpdate</title>
+		 <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery_min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/select2.min.js"></script>
+</head>
+<body>
+		<div class="panel" style="position:absolute; top=:220%; text-align:center; left:40%; ">
+			<div class="heading">
+				<span class="title">Edition</span>
+				</div>
+			<div class="content"><br>
+		<h4>The data you edited was @ViewBag.result</h4>
+
+		<form action="@Url.Action("ShowDB","Home")">
+			<input type="submit" value="Show List" class="button success"/>
+		</form><br>
+				</div>
+        </div>
+</body>
+</html>
+

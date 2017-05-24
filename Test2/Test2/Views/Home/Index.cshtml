@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+		<h2>Welcome To Student Management</h2>
+        <h5>@ViewBag.btnSave</h5>
+		<form action="@Url.Action("SaveDB","Home")" method="post">
+			<table>
+            <tr>
+                <td>
+                    <label>Name</label>               
+                </td>
+                <td>
+                    <input name="inName"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Date of birth</label>
+                </td>
+                <td>
+                    <input name="inDOB"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Age</label>
+                </td>
+                <td>
+                    <input name="inAge"/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+					<input type="submit"/>
+                </td>
+            </tr>
+        </table>     
+			</form>
+</body>
+</html>
+

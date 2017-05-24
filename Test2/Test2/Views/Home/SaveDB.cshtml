@@ -1,0 +1,10 @@
+﻿@{
+    Layout = null;
+}
+
+@ViewData["SaveResult"]
+
+<form method="post" action="@Url.Action("ShowData", "Home")">
+	<label>Show student list</label>
+	<input type="submit"/>
+</form>

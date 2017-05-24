@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShowData</title>
+
+    <script src="~/Scripts/jquery-3.2.1.min.js" ></script>
+		<script>
+			$(document).ready(function(e){
+                
+
+			    $.ajax({
+                    url : "@Url.Action("grid","Home")",
+			        type : "POST",
+			        data : {
+			            "app" : "test"
+			        },
+			        error : function(e){},
+			        success : function(data){
+			            $("#dvList").html(data);
+			        }
+			    });
+			})
+   
+		</script>
+
+</head>
+<body>
+        <h2>Student list</h2>
+        <label>Total record is @ViewBag.abc item</label>
+        @ViewData["ind"]
+        
+        
+        <table  bgcolor="B1DEE8" >
+            <thead>
+                <tr style="color: #533AFF">
+                    <th>ID</th>
+                    <th>Student name</th>
+                    <th>Date of birth</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+           
+            @foreach (var item in ViewBag.ShowStudent)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td align="center">@item.StuName</td>
+                    <td align="center">@item.DOB</td>
+                    <td align="center">@item.Age</td>
+                </tr>
+            }
+            <tr bgcolor="white">
+                <td align="center" colspan="2" >
+                    <form action="@Url.Action("ShowData","Home")" method="post">
+                        <input type="text" name="indBack" value="@ViewBag.indBack"/>
+                        <input type="submit" name="btnPrevious"  value="Previous" @{}>
+                    </form>
+                </td>
+                <td align="center" colspan="2">
+                    <form action="@Url.Action("ShowData","Home")" method="post">
+                        <input type="submit" name="btnNext" value="Next">
+                        <input type="text" name="ind" value="@ViewBag.ind"/>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+
+        <form action="@Url.Action("Index","Home")" method="post">
+            <input type="submit" value="Add new"/>
+        </form>
+        
+        <form action="@Url.Action("DeleteDB", "Home")" method="post">
+            <br><br>
+            <label>Input ID to delete</label>
+            <input type="text" name="Dele" required="true">
+            <input type="submit" value="Delete">
+        </form>
+
+        
+        <form action="@Url.Action("Update", "Home")" method="post">
+            <br>
+            <label>Input ID to Update</label>
+            <input type="text" name="ids" >
+            
+            <input type="submit" value="Update">
+        </form>
+
+        <hr/>
+        
+        <div id="dvList">
+            ss
+        </div>
+        
+</body>
+</html>
+

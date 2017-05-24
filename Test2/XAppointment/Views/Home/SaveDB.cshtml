@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SaveDB</title>
+		<link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+		<link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+		<link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+		<script src="~/Scripts/jquery_min.js"></script>
+		<script src="~/Scripts/js/metro.js"></script>
+		<script src="~/Scripts/js/select2.min.js"></script>
+        <style>
+        
+        footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:45%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+        
+    </style>
+		
+	</head>
+	
+	<body>
+		<header>
+			<h2>Welcome to X-Apointment system</h2>
+		</header>
+        
+		<h2 align="center" ><strong>@ViewData["result"]</strong></h2>
+		<div style="text-align:center;">
+		<form action="@Url.Action("Index","Home")" method="post">
+			<input type="submit" value="Back" class="button danger" align="middle   "/>
+        </form>
+		<form action="@Url.Action("ShowDB","Home")">
+			<input type="submit" value="View data" class="button success" align="middle">
+		</form>
+			</div>
+        <footer>Copyright &copy X-Ware</footer>
+	</body>
+</html>

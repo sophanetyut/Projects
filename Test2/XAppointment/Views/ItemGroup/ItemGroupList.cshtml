@@ -1,0 +1,155 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ItemGroupList</title>
+		<meta charset="UTF-8"/>
+    <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/metro.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script></script>
+        <style>
+        
+        footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:18%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+
+        .item{
+            position:absolute;
+            top:24em;
+            align:center;
+            left:33%;
+        }
+        .setting{
+            position:fixed;      
+            align:center;
+            top:35em;
+            left:35%;
+        }
+        h3{
+            background-color:transparent;
+            
+        }
+        span {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+		<header>
+        <h3>Welcome to X-Apointment system</h3>
+    </header>
+
+		<form action="@Url.Action("","")">
+			<h3 align="center">item group list</h3>
+        <table class="table striped hovered ">
+            <thead>
+                <tr>
+                    <td>
+                        <label>ID</label>
+                    </td>
+                    <td><label>Work Flow</label>
+                    </td>
+                    <td><label>State</label></td>
+                    <td><label>Created Date</label></td>
+                    <td><label>Name</label></td>
+                    <td><label>Category</label></td>
+						<td align="right" colspan="3"><label>Other</label></td>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                foreach(var item in ViewBag.il){
+                <tr>
+                    <td>@item.iID</td>
+                    <td>@item.WorkFlow</td>
+                    <td>@item.State</td>
+                    <td>@item.CreatedDate</td>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+						<td align="right">
+                            <form action="@Url.Action("UpdateDB","ItemGroup")" method="post">
+                                <input type="submit" value="Edit" class="button link"/>
+								<input type="hidden" name="edits" value="@item.iID"/>
+                            </form>
+                    </td>
+                        <td align="left">
+                            <form action="@Url.Action("ItemGroupList","ItemGroup")" method="post">
+                                <input type="submit" value="Delete" class="button link"/>
+								<input type="hidden" name="del" value="@item.iID"/>
+                            </form>
+                        </td>
+                </tr>
+                }}
+                <tr>
+                        <td align="right" colspan="4">
+							<form action="@Url.Action("ItemGroupList","ItemGroup")" method="post">
+                                <input type="submit" value="Previous"/>
+                                <input type="hidden" value="@ViewBag.prev" name="idPre"/>
+							</form>
+						</td>
+						<td align="center" colspan="1">
+							<form action="@Url.Action("Index","ItemGroup")">
+								<input type="submit" value="Add New"/>
+							</form>                     
+						</td>
+						<td align="left" colspan="4">
+							<form action="@Url.Action("ItemGroupList","ItemGroup")" method="post">
+								<input type="submit" value="Next"/>
+								<input type="hidden" value="@ViewBag.next" name="inn"/>
+							</form>
+						</td>
+                </tr>
+            </tbody>
+        </table>
+		</form>      
+		<footer>Copyright &copy; X-ware.com</footer>
+</body>
+</html>

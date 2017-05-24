@@ -1,0 +1,19 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+		<h2>Welcome to about</h2>
+		<h2>@ViewBag.s</h2>
+        
+		<form action="@Url.Action("Index","ViewAbout")" method="post">
+			<input type="submit" value="View About"/>
+		</form>
+</body>
+</html>
+

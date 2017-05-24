@@ -1,0 +1,61 @@
+﻿footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: gray;
+    color: white;
+    padding: 1em;
+    clear: bottom;
+}
+
+header {
+    background-color: gray;
+    text-align: center;
+    color: white;
+    padding: 1em;
+    clear: left;
+}
+
+.Container {
+    position: absolute;
+    left: 30%;
+    top: 25em;
+}
+
+#inName {
+    padding: 20em;
+    clear: left;
+}
+
+label {
+    padding: 1em;
+}
+
+#btnSave {
+    left: 18%;
+}
+
+.imG {
+    position: absolute;
+    left: 40%;
+}
+
+.item {
+    position: absolute;
+    top: 24em;
+    align: center;
+    left: 33%;
+}
+
+.setting {
+    position: fixed;
+    align: center;
+    top: 35em;
+    left: 35%;
+}
+
+h3 {
+    background-color: transparent;
+}

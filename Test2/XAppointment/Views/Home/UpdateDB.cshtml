@@ -1,0 +1,183 @@
+﻿	@{
+	    //string[][] Boom= ViewBag.e as string[][];
+	}
+
+	<head>
+	    <title>Edit</title>
+        <meta charset="UTF-8">
+	    <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery_min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/select2.min.js"></script>
+	   <style>
+        
+        footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:18%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+
+        .item{
+            position:absolute;
+            top:24em;
+            align:center;
+            left:33%;
+        }
+        .setting{
+            position:fixed;      
+            align:center;
+            top:35em;
+            left:35%;
+        }
+        h3{
+            background-color:transparent;
+        }
+
+        
+    </style>
+	
+	</head>
+	<body>
+	    <header>
+		    <h3>Welcome to X-Apointment system</h3>
+	    </header>
+	
+    <h4 align="center">
+        <img src="Image/tshirt.jpeg" border="1px" style="width:260px;height:228px;"/>
+        <br>
+        <input type="submit" value="Select Image" class="button success"/>
+        <input type="submit" value="Upload Image" class="button success"/>
+    </h4>
+
+    <h4>
+	    <form action="@Url.Action("ResultUpdate","Home")" method="post">
+
+		<h3 align="center" style="color:red;"><strong>Code @ViewBag.e[0].itemID</strong></h3>
+		<input type="hidden" name="hID" value="@ViewBag.e[0].itemID" class="input-control text"/>
+
+			<h4 align="center">
+		<label>Name</label>
+		<input type="text" name="inName" value="@ViewBag.e[0].Name" class="input-control text">
+				
+        <label>Groupd</label>
+		<select name="cbGroup" class="input-control text">
+			@{
+			foreach(var item in ViewBag.glist){
+			if (item.item==ViewBag.e[0].Group) {
+			<option selected="selected" value="@item.item">@item.iName</option>
+			}else{
+			<option value="@item.item">@item.iName</option>
+			    }
+			}                     
+			}
+		</select>
+				<br>
+		<label>Price</label>            
+		<input type="text" name="inPrice" value="@ViewBag.e[0].Price" class="input-control text">
+        <label>Quality</label>
+        <input type="text" name="inQty" value="@ViewBag.e[0].Qty">
+        <label>Currency</label>
+
+		<input type="text" name="inCur" value="@ViewBag.e[0].Currency" class="input-control text">
+                </h4>
+
+                <h4 align="center">
+				<br>
+		<h3 align="center" style="color:blue;">SETTING</h3>
+				<br>
+                
+        <h4 align="center">
+					<label class="switch">Feature 
+						@if (ViewBag.e[0].Stock=="on") {
+						    <input type="checkbox" checked="checked" name="inFea"/>
+						    <span class="check"/>
+						}else{
+						    <input type="checkbox" name="inFea"/>
+						    <span class="check"/>
+						}
+					</label>
+
+					<label class="switch">Serial 
+						@if (ViewBag.e[0].Serial=="on") {
+						    <input type="checkbox" checked="checked" name="inSer"/>
+						    <span class="check"/>
+						}else{
+						    <input type="checkbox" name="inSer"/>
+						    <span class="check"/>
+						}
+					</label>
+
+					<label class="switch">Stock 
+						@if (ViewBag.e[0].Stock=="on") {
+						    <input type="checkbox" checked="checked" name="inStock"/>
+						    <span class="check"/>
+						}else{
+                            <input type="checkbox" name="inStock"/>
+						    <span class="check"/>
+						}
+					</label>
+		  
+        <br>
+				<label>Tag</label>
+        <input type="text" name="inTag" value="@ViewBag.e[0].Tag" class="input-control text">
+
+		<label>Size</label>
+        <select name="cbSize" class="input-control text">
+			@{
+			foreach(var item in ViewBag.slist){
+			    if (item.size==int.Parse(ViewBag.e[0].Size)) {
+			        <option selected="selected" value="@item.size">@item.sName</option>
+			    }else{ 
+			        <option value="@item.size">@item.sName</option>
+			    }
+			}
+			}                        
+		</select>
+				
+	        <input type="submit" value="Update" class="button danger">
+					</h4>
+				</h4>
+	    </form>
+		</h4>
+	<footer>Copyright &copy; X-ware.com</footer>
+	</body>

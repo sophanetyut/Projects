@@ -1,0 +1,21 @@
+﻿@model Test2.Models.company
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Company List</title>
+</head>
+<body>
+		<h2>Company Name</h2>
+		<ul>
+			@foreach(var Item in ViewBag.myData){
+                <li>@Item.companyName</li>
+            }
+		</ul>
+		<h2>@ViewBag.Dt</h2>
+</body>
+</html>

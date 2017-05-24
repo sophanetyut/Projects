@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>X-Appointment</title>
+    <meta charset="UTF-8"/>
+    <link href="~/Scripts/css/metro.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-icons.min.css" rel="stylesheet" />
+    <link href="~/Scripts/css/metro-schemes.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/js/metro.js"></script>
+    <script src="~/Scripts/js/metro.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script></script>
+        <style>
+        
+        footer{
+            position:absolute;
+            right:0;
+            bottom:0;
+            left:0;
+            text-align: center;
+            background-color: gray;
+            color:white;
+            padding:1em;
+            clear:bottom;
+        }
+        
+        header{
+            background-color: gray;
+            text-align: center;
+            color: white;
+            padding: 1em;
+            clear: left;
+        }
+        
+        .Container{
+            position:absolute;
+            left:30%;
+            top:25em;
+        }
+
+        #inName{
+            padding: 20em;
+            clear: left;
+        }
+
+        label{
+            padding:1em;
+        }
+
+        #btnSave{
+            left:18%;
+        }
+        .imG{
+            position:absolute;
+            left:40%;
+        }
+
+        .item{
+            position:absolute;
+            top:24em;
+            align:center;
+            left:33%;
+        }
+        .setting{
+            position:fixed;      
+            align:center;
+            top:35em;
+            left:35%;
+        }
+        h3{
+            background-color:transparent;
+            
+        }
+        span {
+            color: red;
+        }
+        
+    </style>
+        
+</head>
+<body>
+        <header>
+        <h3>Welcome to X-Apointment system</h3>
+    </header>
+        <h4 align="center" style="padding-top:15%">
+        <form id="frmSub" action="@Url.Action("SaveDB","ItemGroup")" method="post">
+                <label>Work flow</label>
+        <select name="idWorkFlow" >
+					@{
+					    foreach(var item in ViewBag.lwf){
+                            <option value="@item.size">@item.sName</option>
+					}}
+        </select>
+        <label>State</label>
+        <select name="idState" >
+					@{
+                    foreach(var item in ViewBag.ls){
+                        <option value="@item.size">@item.sName</option>
+					}}
+        </select>
+        <br><br><br>
+                <label>Parent Group</label>
+				<select name="pg">
+					@{
+					foreach(var item in ViewBag.itG){
+                        <option value="@item.size">@item.sName</option>    
+					}
+                        
+					}
+				</select>
+				<label>Category</label>
+				<select name="c">
+					@{
+					    foreach(var item in ViewBag.Cate){
+                            <option value="@item.size">@item.sName</option>
+					    }
+					}
+				</select>            <br><br><br>
+				
+                <input id="inNa" name="inName" type="text" class="input-control text" placeholder="Group Name"/>
+                <!--<input id="inAddress" name="inAddre" type="text" class="input-control text" placeholder="Address"/>-->
+                
+
+                <input type="submit" value="Save" align="center" class="button success"/>
+            </form>
+            </h4>
+        <h3 align="center">
+        <form action="@Url.Action("ItemGroupList","ItemGroup")" method="post">
+            <input type="submit" value="View Item Group list"/>
+        </form>
+            </h3>
+    <footer>Copyright &copy; X-ware.com</footer>
+        <script>
+           $("#frmSub").submit(function(event){
+                if ($("#inNa").val()==="") {
+                    $("#inNa").addClass("error");
+                }else
+                    $("#inNa").removeClass("error");
+            
+
+                if ($("#inNa").val()==="" ) {
+                    event.preventDefault();
+                    return;
+                }
+            })
+        </script>
+</body>
+</html>
