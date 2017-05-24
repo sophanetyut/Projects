@@ -1,9 +1,8 @@
-﻿<Properties StartupConfiguration="{310011B9-D32E-4FA0-B527-4307A656B70A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MasterTest/Views/_ViewStart.cshtml">
+﻿<Properties StartupConfiguration="{AB5E78C0-27EB-4237-BEE5-C996A24209F6}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MasterTest/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="MasterTest/Controllers/HomeController.cs" Line="14" Column="13" />
-      <File FileName="MasterTest/Views/Shared/_Layout.cshtml" Line="5" Column="15" />
-      <File FileName="MasterTest/Views/_ViewStart.cshtml" Line="4" Column="5" />
+      <File FileName="MasterTest/Views/Shared/_Layout.cshtml" Line="12" Column="8" />
+      <File FileName="MasterTest/Controllers/HomeController.cs" Line="20" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.XAppointmentV2 PreferredExecutionTarget="MonoDevelop.Default" />
@@ -15,6 +14,7 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Test3 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.MasterTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.OnlineMusic PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.XAppointment PreferredExecutionTarget="MonoDevelop.Default" />

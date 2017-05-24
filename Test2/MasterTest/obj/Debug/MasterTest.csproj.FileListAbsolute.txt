@@ -24,3 +24,4 @@
 /Users/mac/Projects/Test2/MasterTest/obj/Debug/MasterTest.csproj.CoreCompileInputs.cache
 /Users/mac/Projects/Test2/MasterTest/obj/Debug/MasterTest.dll
 /Users/mac/Projects/Test2/MasterTest/obj/Debug/MasterTest.pdb
+/Users/mac/Projects/Test2/MasterTest/obj/Debug/MasterTest.csprojResolveAssemblyReference.cache

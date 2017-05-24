@@ -11,7 +11,18 @@ namespace MasterTest.Controllers
     {
         public ActionResult Index()
         {
-            
+
+            return View();
+        }
+
+        public ActionResult SaveDB(){
+
+
+            return View();
+        }
+
+        public ActionResult ShowDB(){
+
 
             return View();
         }
