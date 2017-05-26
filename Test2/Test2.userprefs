@@ -1,13 +1,7 @@
 ﻿<Properties StartupConfiguration="{AB5E78C0-27EB-4237-BEE5-C996A24209F6}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MasterTest/Views/Shared/_Layout.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MasterTest/Views/Home/Index.cshtml">
     <Files>
-      <File FileName="MasterTest/Views/Shared/_Layout.cshtml" Line="43" Column="8" />
-      <File FileName="MasterTest/Views/Home/SaveDB.cshtml" Line="7" Column="18" />
-      <File FileName="MasterTest/Views/Home/Index.cshtml" Line="6" Column="1" />
-      <File FileName="MasterTest/Views/Home/ShowDB.cshtml" Line="7" Column="18" />
-      <File FileName="MasterTest/Controllers/HomeController.cs" Line="31" Column="1" />
-      <File FileName="MasterTest/Scripts/FormStyle.css" Line="64" Column="16" />
-      <File FileName="MasterTest/Views/Shared/fuckingMaster.master" Line="11" Column="3" />
+      <File FileName="MasterTest/Views/Home/Index.cshtml" Line="18" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.XAppointmentV2 PreferredExecutionTarget="MonoDevelop.Default" />

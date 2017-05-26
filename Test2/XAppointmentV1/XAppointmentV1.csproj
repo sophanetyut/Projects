@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB5E78C0-27EB-4237-BEE5-C996A24209F6}</ProjectGuid>
+    <ProjectGuid>{F45BABBE-D849-43A7-9FEB-EBB4B28DF82C}</ProjectGuid>
     <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>MasterTest</RootNamespace>
-    <AssemblyName>MasterTest</AssemblyName>
+    <RootNamespace>XAppointmentV1</RootNamespace>
+    <AssemblyName>XAppointmentV1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -72,7 +72,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
@@ -86,7 +85,6 @@
     </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Models\db.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -97,30 +95,6 @@
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-3.2.1.min.js" />
-    <Content Include="Scripts\FormStyle.css" />
-    <Content Include="Views\Shared\fuckingMaster.master" />
-    <Content Include="Scripts\css\metro-colors.css" />
-    <Content Include="Scripts\css\metro-colors.min.css" />
-    <Content Include="Scripts\css\metro-icons.css" />
-    <Content Include="Scripts\css\metro-icons.min.css" />
-    <Content Include="Scripts\css\metro-responsive.css" />
-    <Content Include="Scripts\css\metro-responsive.min.css" />
-    <Content Include="Scripts\css\metro-rtl.css" />
-    <Content Include="Scripts\css\metro-rtl.min.css" />
-    <Content Include="Scripts\css\metro-schemes.css" />
-    <Content Include="Scripts\css\metro-schemes.min.css" />
-    <Content Include="Scripts\css\metro.css" />
-    <Content Include="Scripts\css\metro.min.css" />
-    <Content Include="Scripts\fonts\metro.eot" />
-    <Content Include="Scripts\fonts\metro.svg" />
-    <Content Include="Scripts\fonts\metro.ttf" />
-    <Content Include="Scripts\fonts\metro.woff" />
-    <Content Include="Scripts\js\metro.js" />
-    <Content Include="Scripts\js\metro.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Scripts\fonts\selection.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

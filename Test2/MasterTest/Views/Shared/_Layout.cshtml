@@ -10,36 +10,103 @@
         
         <script src="~/Scripts/jquery_min.js"></script>
         <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+
+
+		
         <meta charset="UTF-8"/>
+		<script></script>
 
         @RenderSection("head", false)
 	</head>
 
 	<body>
-		<header style="background-color: gray; ">
+		<header>
 			<h1>X-Appointment</h1>
 		</header>
 		<div class="app-bar">
-			<center>
-				<a class="app-bar-element" href="@Url.Action("Index","Home")">Home</a>
-				<a class="app-bar-element" href="@Url.Action("SaveDB","Home")">Save data</a>
-				<a class="app-bar-element" href="@Url.Action("ShowDB", "Home")">Show Data</a>
-			</center>
+			<a class="app-bar-element" href="">Home</a>
+
+			<a href="" class="app-bar-element">POS</a>
+			<a href="" class="app-bar-element">Reprint Invoice</a>
+			<a href="" class="app-bar-element">Return Invoice</a>
+			<a href="" class="app-bar-element">Report</a>
+			<span class="app-bar-divider"></span>
+			<ul class="app-bar-menu">
+				<li>
+					<a href="" class="dropdown-toggle">Customer</a>
+					<ul class="d-menu" data-role="dropdown">
+						<li><a href="">Customer</a></li>
+						<li><a href="">Payment</a></li>                  
+					</ul>
+				</li>            
+			</ul>
+			<ul class="app-bar-menu">
+                <li>
+                    <a href="" class="dropdown-toggle">Inventory</a>
+                    <ul class="d-menu" data-role="dropdown">
+                        <li><a href="">Item</a></li>
+                        <li><a href="">Item Group</a></li>                  
+                        <li><a href="">Warehouse</a></li>                  
+                    </ul>
+                </li>            
+            </ul>
+            <ul class="app-bar-menu">
+                <li>
+                    <a href="" class="dropdown-toggle">Transaction</a>
+                    <ul class="d-menu" data-role="dropdown">
+                        <li><a href="">Receive/Issue Item</a></li>
+                        <li><a href="">Transfter Item</a></li>                               
+                    </ul>
+                </li>            
+            </ul>
+			<ul class="app-bar-menu">
+                <li>
+                    <a href="" class="dropdown-toggle">Permission</a>
+                    <ul class="d-menu" data-role="dropdown">
+                        <li><a href="">Permission</a></li>
+                        <li><a href="">Special Permission</a></li>                        
+                    </ul>
+                </li>            
+            </ul>
+            <span class="app-bar-divider"></span>
+			
+
+			<div class="app-bar-element place-right active-container">
+				<a class="dropdown-toggle fg-white">
+					<span class="mif-enter"></span>
+				Account
+				</a>
+				<div class="app-bar-drop-container bg-white fg-dark place-right" data-role="dropdown" data-no-close="true" style="display: none;">
+					<div class="padding20">
+						<form>
+							<h4 class="text-light">Login to service...</h4>
+							<div class="input-control text">
+								<span class="mif-user prepend-icon"></span>
+								<input type="text">
+							</div>
+							<div class="input-control text">
+								<span class="mif-lock prepend-icon"></span>
+								<input type="password">
+							</div>
+							<label class="input-control checkbox small-check">
+								<input type="checkbox">
+								<span class="check"></span>
+								<span class="caption">Remember me</span>
+							</label>
+							<div class="form-actions">
+								<button class="button">Login</button>
+								<button class="button link">Cancel</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="app-bar-divider place-right"></div>
 		</div>
 
-        <table >
-            <tr>
-                <td>
-					<label>Hello Navigation</label>
-                </td>
-                <td>
-					@RenderBody()
-                </td>
-                <td>
-					<label>Hello Right</label>
-                </td>
-            </tr>
-        </table>
+		
+        @RenderBody()   
 
+		<footer>Powered by X-WareKH</footer>
 	</body>
 </html>
